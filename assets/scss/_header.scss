@@ -1,0 +1,269 @@
+
+
+
+/*===========================
+    2.HEADER css 
+===========================*/
+
+
+.header-area{
+    position: relative;
+    height: 100vh;
+    
+    @media #{$md}{
+        height: auto;
+    }
+    @media #{$xs}{
+        height: auto;
+    }
+}
+
+
+.header-content{
+    position: relative;
+    z-index: 1;
+    max-width: 90%;
+    height: 90%;
+    width: 100%;
+    margin: 0 auto;
+    @include box-shadow(0px 0px 40px 0px rgba(0,0,0,0.4));
+    
+    
+    @media #{$md}{
+        margin: 50px auto;
+    }
+    @media #{$xs}{
+        max-width: 90%;
+        margin: 20px auto;
+    }
+    
+    & .header-content-wrapper{
+        max-width: 35%;
+        height: 100%;
+        padding: 0px 40px;
+        position: relative;
+        background: rgb(28,21,101);
+        background: -webkit-linear-gradient(rgba(28,21,101,1) 0%, rgba(106,0,249,1) 100%);
+        background: -o-linear-gradient(rgba(28,21,101,1) 0%, rgba(106,0,249,1) 100%);
+        background: linear-gradient(rgba(28,21,101,1) 0%, rgba(106,0,249,1) 100%);
+        
+        @media #{$laptop}{
+            padding: 0px 25px;
+            max-width: 40%;
+        }
+        @media #{$lg}{
+            max-width: 45%;
+            padding: 0px 30px;
+        }
+        @media #{$md}{
+            max-width:100%;
+            padding: 50px 40px;
+        }
+        @media #{$xs}{
+            max-width:100%;
+            padding: 30px 15px;
+        }
+        @media #{$xs}{
+            max-width:100%;
+            padding: 30px;
+        }
+        
+        
+        & .wrapper-shape-one{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        & .wrapper-shape-two{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70%;
+            z-index: 1;
+        }
+        
+        & .main-content{
+            position: relative;
+            z-index: 9;
+            
+            & .profile-name{
+                color: $white;
+                font-size: 50px;
+                font-weight: 600;
+                padding-bottom: 8px;
+                
+                @media #{$laptop}{
+                    font-size: 44px;
+                }
+                @media #{$lg}{
+                    font-size: 40px;
+                }
+                
+                @media #{$xs}{
+                    font-size: 28px;
+                    padding-bottom: 5px;
+                }
+                @media #{$sm}{
+                    font-size: 34px;
+                }
+            }
+
+            & span{
+                font-size: 30px;
+                font-weight: 500;
+                color: $white;
+                padding-bottom: 30px;
+                
+                @media #{$laptop}{
+                    font-size: 24px;
+                    padding-bottom: 25px;
+                }
+                @media #{$laptop}{
+                    font-size: 20px;
+                    padding-bottom: 25px;
+                }
+                
+                @media #{$xs}{
+                    font-size: 18px;
+                    padding-bottom: 20px;
+                }
+            }
+
+            & p{
+                color: $white;
+                font-size: 20px;
+                line-height: 30px;
+                padding-bottom: 55px;
+                
+                @media #{$laptop}{
+                    font-size: 16px;
+                    line-height: 28px;
+                    padding-bottom: 45px;
+                }
+                @media #{$lg}{
+                    font-size: 16px;
+                    line-height: 28px;
+                    padding-bottom: 45px;
+                }
+                
+                @media #{$xs}{
+                    font-size: 15px;
+                    line-height: 24px;
+                    padding-bottom: 35px;
+                }
+                @media #{$xs}{
+                    font-size: 16px;
+                    line-height: 27px;
+                }
+            }
+
+            & .social{
+                margin-top: 50px;
+                padding-top: 50px;
+                border-top: 1px solid $white;
+                
+                @media #{$laptop}{
+                    margin-top: 40px;
+                    padding-top: 40px;
+                }
+                @media #{$lg}{
+                    margin-top: 40px;
+                    padding-top: 40px;
+                }
+                @media #{$xs}{
+                    margin-top: 30px;
+                    padding-top: 25px;
+                }
+                
+                & li{
+                    display: inline-block;
+                    margin: 0 10px;
+                    
+                    @media #{$xs}{
+                        margin: 0 5px;
+                    }
+
+                    & a{
+                        font-size: 22px;
+                        width: 50px;
+                        height: 50px;
+                        line-height: 48px;
+                        text-align: center;
+                        border-radius: 50%;
+                        border: 2px solid $white;
+                        color: $white;
+                        overflow: hidden;
+                        position: relative;
+                        
+                        @media #{$xs}{
+                            width: 40px;
+                            height: 40px;
+                            line-height: 38px;
+                            font-size: 18px;
+                        }
+
+                        &::before{
+                            position: absolute;
+                            content: '';
+                            width: 150%;
+                            height: 0%;
+                            left: 0;
+                            top: 0;
+                            @include transition(0.5s);
+                            z-index: -1;
+                            border-radius: 0 0 50% 50%;
+                        }
+
+
+                        &:hover{
+                            color: $theme-color;
+
+                            &::before{
+                                height: 180%;
+                                background-color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    & .profile-image{
+        height: 100%;
+        max-width:65%;
+        
+        @media #{$laptop}{
+            max-width: 60%;
+        }
+        
+        @media #{$md}{
+            max-width:100%;
+        }
+        @media #{$xs}{
+            max-width:100%;
+        }
+        
+        @media #{$lg}{
+            max-width:55%;
+        }
+        
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
