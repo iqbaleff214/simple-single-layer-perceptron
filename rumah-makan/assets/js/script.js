@@ -263,7 +263,7 @@ document.addEventListener("click", function (e) {
         };
         obj.output = valResult == 1 ? { good: 1 } : { bad: 1 };
         storeDataset(obj);
-        net.trainData(true);
+        // net.trainData(true);
       } else {
         console.log("tidak valid");
       }
