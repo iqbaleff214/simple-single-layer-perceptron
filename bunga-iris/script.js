@@ -73,6 +73,8 @@ const ALPHA = 0.1;
 let weights = [0.5, 0.5, 0.5, 0.5];
 let threshold = 0.5;
 
+let dataTesting = [];
+
 let trained = false;
 
 document.addEventListener("click", (e) => {
@@ -89,6 +91,7 @@ document.addEventListener("click", (e) => {
 function perceptron() {
   let row = "";
   for (const i of Array(10).keys()) {
+    let errors = 0;
     console.log(`Epoch: ${i + 1}`);
     for (const j of dataset.keys()) {
       const currentData = dataset[j];
@@ -106,6 +109,7 @@ function perceptron() {
       row += `<td>${activate.toPrecision(5)}</td>`;
       row += `<td>${currentData.output}</td>`;
       const err = error(currentData.output, activate);
+      errors += err;
       // console.log(`Error: ${err.toPrecision(5)}`);
       row += `<td>${err.toFixed(5)}</td>`;
       const deltaThreshold =
@@ -119,6 +123,8 @@ function perceptron() {
       threshold = threshold - ALPHA * deltaThreshold;
       row += "</tr>";
     }
+    const epochError = errors / dataset.length;
+    console.log(`Epoch error: ${errors}/${dataset.length}`);
   }
   trained = true;
   setTimeout(() => {
