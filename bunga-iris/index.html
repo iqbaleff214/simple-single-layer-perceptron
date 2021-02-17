@@ -153,6 +153,134 @@
           role="tabpanel"
           aria-labelledby="pills-training-tab"
         >
+          <div class="row mb-3">
+            <div class="col">
+              <ul class="list-group">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Learning rate
+                  <span class="badge bg-primary rounded-pill span-alpha"
+                    >0.001</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Jumlah data
+                  <span class="badge bg-primary rounded-pill span-jml-data"
+                    >100</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Epoch
+                  <span class="badge bg-primary rounded-pill span-epoch"
+                    >10</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="list-group">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center active"
+                >
+                  Awal
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bobot 1
+                  <span class="badge bg-primary rounded-pill span-w1-old"
+                    >0.5</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bobot 2
+                  <span class="badge bg-primary rounded-pill span-w2-old"
+                    >0.5</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bobot 3
+                  <span class="badge bg-primary rounded-pill span-w3-old"
+                    >0.5</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bobot 4
+                  <span class="badge bg-primary rounded-pill span-w4-old"
+                    >0.5</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bias
+                  <span class="badge bg-primary rounded-pill span-bias-old"
+                    >0.5</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="list-group">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center active"
+                >
+                  Hasil
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bobot 1
+                  <span class="badge bg-primary rounded-pill span-w1-new"
+                    >0.5</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bobot 2
+                  <span class="badge bg-primary rounded-pill span-w2-new"
+                    >0.5</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bobot 3
+                  <span class="badge bg-primary rounded-pill span-w3-new"
+                    >0.5</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bobot 4
+                  <span class="badge bg-primary rounded-pill span-w4-new"
+                    >0.5</span
+                  >
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Bias
+                  <span class="badge bg-primary rounded-pill span-bias-new"
+                    >0.5</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
           <table class="table table-bordered table-responsive">
             <thead>
               <tr>
@@ -161,7 +289,7 @@
                 <th>Sigma</th>
                 <th>Output</th>
                 <th>Target</th>
-                <th>Galat</th>
+                <th>Error</th>
               </tr>
             </thead>
             <tbody class="tbody-training">
@@ -187,7 +315,99 @@
           role="tabpanel"
           aria-labelledby="pills-testing-tab"
         >
-          ...
+        <div class="row mb-4">
+          <div class="col-md-3">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Panjang Kelopak"
+                aria-describedby="basic-addon2"
+                id="test-x1"
+              />
+              <span class="input-group-text" id="basic-addon2"> cm </span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Lebar Kelopak"
+                aria-describedby="basic-addon2"
+                id="test-x2"
+              />
+              <span class="input-group-text" id="basic-addon2"> cm </span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Panjang Mahkota"
+                aria-describedby="basic-addon2"
+                id="test-x3"
+              />
+              <span class="input-group-text" id="basic-addon2"> cm </span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Lebar Mahkota"
+                aria-describedby="basic-addon2"
+                id="test-x4"
+              />
+              <span class="input-group-text" id="basic-addon2"> cm </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row mb-3">
+              <label for="test-t" class="col-sm-2 col-form-label">
+                Jenis
+              </label>
+              <div class="col-sm-10">
+                <select class="form-select" id="test-t">
+                  <option value="0">Iris-versicolor</option>
+                  <option value="1">Iris-virginica</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-primary test-simpan">
+              Simpan
+            </button>
+          </div>
+        </div>
+          <table class="table table-bordered table-responsive">
+            <thead
+              class="text-center"
+              style="vertical-align: middle; text-align: center"
+            >
+              <tr>
+                <th rowspan="2" width="10%">No</th>
+                <th colspan="2">Kelopak</th>
+                <th colspan="2">Mahkota</th>
+                <th colspan="2"">Output</th>
+                <th rowspan="2"">Prediksi</th>
+              </tr>
+              <tr>
+                <th>Panjang</th>
+                <th>Lebar</th>
+                <th>Panjang</th>
+                <th>Lebar</th>
+                <th>Label</th>
+                <th>Target</th>
+              </tr>
+            </thead>
+            <tbody class="tbody-testing">
+
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
