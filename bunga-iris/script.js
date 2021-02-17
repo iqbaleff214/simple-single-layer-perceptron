@@ -53,7 +53,7 @@ const generateTableDataset = () => {
                 <td>${element.input[2]}cm</td>
                 <td>${element.input[3]}cm</td>
                 <td>${
-                  element.output ? "Iris-versicolor (1)" : "Iris-virginica (0)"
+                  element.output ? "Iris-virginica (1)" : "Iris-versicolor (0)"
                 }</td>
               </tr>
         `;
