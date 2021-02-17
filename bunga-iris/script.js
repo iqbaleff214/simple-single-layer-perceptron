@@ -37,10 +37,9 @@ const storeDataset = (obj) => {
   location.reload();
 };
 const setDatasetJSON = () => {
-  dataset =
-    document.querySelector('input[name="defaultDataset"]:checked').value == "10"
-      ? data10
-      : data100;
+  const jml = document.querySelector('input[name="defaultDataset"]:checked')
+    .value;
+  dataset = jml == "10" ? data10 : jml == "100" ? data100 : data0;
   localStorage.setItem(itemStorage, JSON.stringify(dataset));
 };
 const resetDataset = () => {

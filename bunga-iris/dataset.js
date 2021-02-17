@@ -1,3 +1,18 @@
+let data0 = [];
+
+let data10 = [
+  { input: [7.0, 3.2, 4.7, 1.4], output: 0 },
+  { input: [6.9, 3.1, 4.9, 1.5], output: 0 },
+  { input: [6.4, 3.2, 4.5, 1.5], output: 0 },
+  { input: [5.5, 2.3, 4.0, 1.3], output: 0 },
+  { input: [6.5, 2.8, 4.6, 1.5], output: 0 },
+  { input: [6.3, 3.3, 6.0, 2.5], output: 1 },
+  { input: [5.8, 2.7, 5.1, 1.9], output: 1 },
+  { input: [7.1, 3.0, 5.9, 2.1], output: 1 },
+  { input: [6.3, 2.9, 5.6, 1.8], output: 1 },
+  { input: [6.5, 3.0, 5.8, 2.2], output: 1 },
+];
+
 let data100 = [
   { input: [7.0, 3.2, 4.7, 1.4], output: 0 },
   { input: [6.9, 3.1, 4.9, 1.5], output: 0 },
@@ -99,17 +114,4 @@ let data100 = [
   { input: [6.5, 3.0, 5.2, 2.0], output: 1 },
   { input: [6.2, 3.4, 5.4, 2.3], output: 1 },
   { input: [5.9, 3.0, 5.1, 1.8], output: 1 },
-];
-
-let data10 = [
-  { input: [7.0, 3.2, 4.7, 1.4], output: 0 },
-  { input: [6.9, 3.1, 4.9, 1.5], output: 0 },
-  { input: [6.4, 3.2, 4.5, 1.5], output: 0 },
-  { input: [5.5, 2.3, 4.0, 1.3], output: 0 },
-  { input: [6.5, 2.8, 4.6, 1.5], output: 0 },
-  { input: [6.3, 3.3, 6.0, 2.5], output: 1 },
-  { input: [5.8, 2.7, 5.1, 1.9], output: 1 },
-  { input: [7.1, 3.0, 5.9, 2.1], output: 1 },
-  { input: [6.3, 2.9, 5.6, 1.8], output: 1 },
-  { input: [6.5, 3.0, 5.8, 2.2], output: 1 },
 ];
