@@ -31,7 +31,10 @@ const storeDataset = (obj) => {
   location.reload();
 };
 const setDatasetJSON = () => {
-  dataset = data;
+  dataset =
+    document.querySelector('input[name="defaultDataset"]:checked').value == "10"
+      ? data10
+      : data100;
   localStorage.setItem(itemStorage, JSON.stringify(dataset));
 };
 const resetDataset = () => {
@@ -66,7 +69,7 @@ const inputNotNull = () =>
 if (localStorage.getItem(itemStorage)) dataset = getDataset();
 else setDatasetJSON();
 
-const ALPHA = 0.002;
+const ALPHA = 0.1;
 let weights = [0.5, 0.5, 0.5, 0.5];
 let threshold = 0.5;
 
