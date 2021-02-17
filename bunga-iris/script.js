@@ -66,11 +66,11 @@ const inputNotNull = () =>
 if (localStorage.getItem(itemStorage)) dataset = getDataset();
 else setDatasetJSON();
 
-const ALPHA = 0.01;
+const ALPHA = 0.002;
 let weights = [0.5, 0.5, 0.5, 0.5];
-let dWeights = [];
 let threshold = 0.5;
-let dThreshold;
+
+let trained = false;
 
 document.addEventListener("click", (e) => {
   if (is_contains(e, "input-simpan"))
@@ -78,43 +78,50 @@ document.addEventListener("click", (e) => {
 
   if (is_contains(e, "dataset-reset"))
     if (confirm("Yakin ingin mereset dataset?")) resetDataset();
+
+  if (is_contains(e, "training-tab")) if (!trained) perceptron();
 });
 
 // Perceptron
 function perceptron() {
   let row = "";
-  _trainingTable.innerHTML = '';
   for (const i of Array(10).keys()) {
     console.log(`Epoch: ${i + 1}`);
     for (const j of dataset.keys()) {
       const currentData = dataset[j];
-      row = "<tr>";
+      row += "<tr>";
       row += j == 0 ? `<td rowspan="${dataset.length}">${i + 1}</td>` : ``;
       row += `<td>${j + 1}</td>`;
-      let sigma = threshold;
+      let sum = threshold;
+      // console.log(`Bias sebelum: ${sum}`);
       for (let k = 0; k < weights.length; k++)
-        sigma += currentData.input[k] * weights[k];
-      row += `<td>${sigma}</td>`;
-      const activate = sigmoid(sigma);
-      row += `<td>${activate}</td>`;
+        sum = sum + currentData.input[k] * weights[k];
+      // console.log(`data ke-${j + 1}: ${sum.toPrecision(6)}`);
+      row += `<td>${sum.toPrecision(6)}</td>`;
+      const activate = sigmoid(sum);
+      // console.log(`Sigmoid: ${activate.toPrecision(5)}`);
+      row += `<td>${activate.toPrecision(5)}</td>`;
       row += `<td>${currentData.output}</td>`;
       const err = error(currentData.output, activate);
-      row += `<td>${err}</td>`;
+      // console.log(`Error: ${err.toPrecision(5)}`);
+      row += `<td>${err.toFixed(5)}</td>`;
       const deltaThreshold =
         -2 * (currentData.output - activate) * activate * (1 - activate);
       for (let k = 0; k < weights.length; k++) {
         const deltaWheight = deltaThreshold * currentData.input[k];
-        weights[k] -= ALPHA * deltaWheight;
-        console.log(`∂X${k + 1}=${deltaWheight}`);
+        // console.log(`delta x${k + 1}: ${deltaWheight.toFixed(5)}`);
+        weights[k] = weights[k] - ALPHA * deltaWheight;
       }
-      threshold -= ALPHA * deltaThreshold;
+      // console.log(`delta bias: ${deltaThreshold.toFixed(5)}`);
+      threshold = threshold - ALPHA * deltaThreshold;
       row += "</tr>";
-      _trainingTable.innerHTML += row;
     }
   }
+  trained = true;
+  setTimeout(() => {
+    _trainingTable.innerHTML = row;
+  }, 1500);
 }
 
 _datasetTable.innerHTML = generateTableDataset();
 datatable();
-
-perceptron();

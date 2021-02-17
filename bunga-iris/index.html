@@ -37,7 +37,7 @@
         </li>
         <li class="nav-item" role="presentation">
           <button
-            class="nav-link"
+            class="nav-link training-tab"
             id="pills-training-tab"
             data-bs-toggle="pill"
             data-bs-target="#pills-training"
@@ -81,9 +81,7 @@
               >
                 Tambah
               </button>
-              <button
-                class="btn btn-outline-danger dataset-reset"
-              >
+              <button class="btn btn-outline-danger dataset-reset">
                 Reset
               </button>
             </div>
@@ -130,7 +128,7 @@
           role="tabpanel"
           aria-labelledby="pills-training-tab"
         >
-          <table class="table table-bordered">
+          <table class="table table-bordered table-responsive">
             <thead>
               <tr>
                 <th>Epoch</th>
@@ -143,12 +141,17 @@
             </thead>
             <tbody class="tbody-training">
               <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>4</td>
-                <td>0.4</td>
-                <td>1</td>
-                <td>0.33</td>
+                <td colspan="6" class="text-center p-4">
+                  <div class="spinner-grow text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
